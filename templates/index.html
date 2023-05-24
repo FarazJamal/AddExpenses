@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block content %}
+
+  <header id="hero" class="hero">
+    <div class="flex-container w-container">
+      <div>
+        <h1>Add an expense</h1>
+        <a href="{{ url_for('addExpenses') }}" class="button-8 w-button">Add an Expense</a>
+      </div>
+    </div>
+  </header>
+  <section id="feature-section" class="feature-section">
+    <div class="flex-container w-container">
+      <div>
+        <h2>Track your expenses</h2>
+        <ul>
+          <p style="display: inline;"> In total, you have spent </p>           
+          <li style="display: inline;">${{ expenses }}</li>
+          <p style="display: inline;"> so far</p>
+          
+        </ul>
+
+        <h2>By category</h2>
+        <ul  style="list-style-type: none;">
+          <li>Rent - ${{ expensesByCategory[2][1] }}</li>
+          <li>Electricity - ${{ expensesByCategory[1][1] }}</li>
+          <li>Water - ${{ expensesByCategory[1][1] }}</li>
+          <li>Insurance - ${{ expensesByCategory[3][1] }}</li>
+          <li>Restaurants - ${{ expensesByCategory[5][1] }}</li>
+          <li>Groceries - ${{ expensesByCategory[0][1] }}</li>
+          <li>Gas - ${{ expensesByCategory[5][1] }}</li>
+          <li>College - ${{ expensesByCategory[4][1] }}</li>
+          <li>Party - ${{ expensesByCategory[5][1] }}</li>
+          <li>Mortgage - ${{ expensesByCategory[2][1] }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

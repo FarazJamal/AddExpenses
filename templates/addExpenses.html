@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+
+  <header id="hero" class="hero">
+      <a href="{{ url_for('index') }}" class="button-8 w-button">Back to Homepage</a>
+
+      <br><br><br>
+    <div class="flex-container w-container">
+      <div>
+        <form method="post">
+          {{ form.csrf_token }}
+          <label for="{{ form.description.id }}">{{ form.description.label.text }}</label>
+          {{ form.description(class="form-control") }}
+          <br>
+          <label for="{{ form.category.id }}">{{ form.category.label.text }}</label>
+          {{ form.category(class="form-control") }}
+          <br>
+          <label for="{{ form.cost.id }}">{{ form.cost.label.text }}</label>
+          {{ form.cost(class="form-control") }}
+          <br>
+          <label for="{{ form.date.id }}">{{ form.date.label.text }}</label>
+          {{ form.date(class="form-control") }}
+          <br>
+          <input value="Submit" class="button-8 w-button" type="submit">
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+{% endblock %}
